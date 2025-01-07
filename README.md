@@ -39,3 +39,15 @@ python inference_webcam.py --video_name 0
 python inference_video.py --video_path path/to/video.mp4
 ```
 
+
+## Setting up streamlit
+Install the library:
+```bash
+pip install streamlit
+```
+Make sure to right click on your app script and open an "Integrated Terminal"
+then type:
+
+```bash
+streamlit run featuresapp.py
+```
