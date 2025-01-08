@@ -35,7 +35,8 @@ with col1:
     """
     )
     # Start Webcam and Detection
-    run = st.checkbox("Start Detection")
+    #run = st.checkbox("Start Detection")
+    run=st.toggle("Activate Detection")
     FRAME_WINDOW = st.image([])
 
 # Graphs on Right (col2)
