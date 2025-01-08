@@ -46,7 +46,7 @@ Install the library:
 pip install streamlit
 ```
 Make sure to right click on your app script and open an "Integrated Terminal"
-then type:
+then type (in this case the app.py script is named featuresapp.py):
 
 ```bash
 streamlit run featuresapp.py
