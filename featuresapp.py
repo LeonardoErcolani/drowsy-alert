@@ -14,7 +14,7 @@ face_mesh = mp_face_mesh.FaceMesh(
     max_num_faces=1,
     refine_landmarks=True,
     min_detection_confidence=0.5,
-    min_tracking_confidence=0.5
+    min_tracking_confidence=0.5,
 )
 # Streamlit Layout
 st.set_page_config(layout="wide")
@@ -107,12 +107,18 @@ while run:
     if results.multi_face_landmarks:
         for landmarks in results.multi_face_landmarks:
             # Draw landmarks on the frame
+            #mp_drawing.draw_landmarks(
+                #frame,
+                #landmarks,
+               # mp_face_mesh.FACEMESH_TESSELATION,
+               # mp_drawing.DrawingSpec(color=(0, 255, 0), thickness=1, circle_radius=1),
+               # mp_drawing.DrawingSpec(color=(0, 0, 255), thickness=1),
+           # )
             mp_drawing.draw_landmarks(
-                frame,
-                landmarks,
-                mp_face_mesh.FACEMESH_TESSELATION,
-                mp_drawing.DrawingSpec(color=(0, 255, 0), thickness=1, circle_radius=1),
-                mp_drawing.DrawingSpec(color=(0, 0, 255), thickness=1),
+                image=frame,
+                landmark_list=landmarks,
+                connections=mp_face_mesh.FACEMESH_CONTOURS,
+                landmark_drawing_spec=None,
             )
 
             # Calculate metrics
